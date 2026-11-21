@@ -55,7 +55,7 @@
 
 namespace {
 
-QColor sample_widget_center_color(QWidget* widget) {
+[[maybe_unused]] QColor sample_widget_center_color(QWidget* widget) {
     if (widget == nullptr || widget->width() <= 4 || widget->height() <= 4) {
         return {};
     }

@@ -184,9 +184,9 @@ struct DbError {
 };
 
 struct ConnectionTestResult {
-    std::string database;
-    std::string user;
-    std::string version;
+    std::string database   = {};
+    std::string user       = {};
+    std::string version    = {};
     bool        tls_active = false;
 };
 
