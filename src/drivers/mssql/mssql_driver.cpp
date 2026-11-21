@@ -819,7 +819,7 @@ std::expected<void, DbError> MsSqlDriver::execute_stream(
         }
     }
     struct StatsXmlGuard final {
-        const std::function<std::expected<void, DbError>(std::string_view)>& fn;
+        const decltype(exec_control_stmt)& fn;
         bool armed = false;
         ~StatsXmlGuard() {
             if (armed) {
@@ -1321,7 +1321,7 @@ std::expected<void, DbError> MsSqlDriver::parse_only(
         return std::unexpected(on_res.error());
     }
     struct ParseOffGuard final {
-        const std::function<std::expected<void, DbError>(std::string_view)>& fn;
+        const decltype(exec_control_stmt)& fn;
         ~ParseOffGuard() {
             (void)fn("SET PARSEONLY OFF");
         }
@@ -1410,7 +1410,7 @@ std::expected<std::vector<core::RawExecutionPlan>, DbError> MsSqlDriver::explain
         return std::unexpected(on_res.error());
     }
     struct PlanOffGuard final {
-        const std::function<std::expected<void, DbError>(std::string_view)>& fn;
+        const decltype(exec_control_stmt)& fn;
         const char* cmd;
         ~PlanOffGuard() {
             (void)fn(cmd);
