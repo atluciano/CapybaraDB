@@ -622,6 +622,7 @@ void add_join_conditions(
                     .text        = make_join_condition(joined.alias.value_or(joined.name), fk.columns, other.alias.value_or(other.name), fk.target_columns, cat.is_tsql),
                     .kind        = SqlCompletionKind::Join,
                     .description = "condition from foreign key " + fk.name,
+                    .filter      = {},
                 });
             }
             if (eq_ident(fk.target_schema, joined_rel.schema, cat.is_tsql) && eq_ident(fk.target_table, joined_rel.name, cat.is_tsql) &&
@@ -630,6 +631,7 @@ void add_join_conditions(
                     .text        = make_join_condition(joined.alias.value_or(joined.name), fk.target_columns, other.alias.value_or(other.name), fk.columns, cat.is_tsql),
                     .kind        = SqlCompletionKind::Join,
                     .description = "condition from foreign key " + fk.name,
+                    .filter      = {},
                 });
             }
         }
