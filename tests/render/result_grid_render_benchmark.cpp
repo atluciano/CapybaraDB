@@ -4,6 +4,7 @@
 #include "ui/grid/grid_view_state.hpp"
 #include "ui/grid/software_grid_backend.hpp"
 
+#define ANKERL_NANOBENCH_IMPLEMENT
 #include <nanobench.h>
 
 #include <algorithm>

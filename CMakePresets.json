@@ -7,23 +7,20 @@
   },
   "configurePresets": [
     {
-      "name": "base-vcpkg",
+      "name": "base-conan",
       "hidden": true,
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
-      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "toolchainFile": "${sourceDir}/build/${presetName}/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_CXX_STANDARD": "23",
         "CMAKE_CXX_EXTENSIONS": "OFF"
-      },
-      "environment": {
-        "VCPKG_KEEP_ENV_VARS": "Qt6_DIR;CMAKE_PREFIX_PATH;QT_ROOT_DIR"
       }
     },
     {
       "name": "win-msvc-debug",
       "displayName": "Windows x64 MSVC Debug",
-      "inherits": "base-vcpkg",
+      "inherits": "base-conan",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -32,14 +29,13 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "cl.exe",
-        "CMAKE_CXX_COMPILER": "cl.exe",
-        "VCPKG_TARGET_TRIPLET": "x64-windows"
+        "CMAKE_CXX_COMPILER": "cl.exe"
       }
     },
     {
       "name": "win-msvc-release",
       "displayName": "Windows x64 MSVC Release",
-      "inherits": "base-vcpkg",
+      "inherits": "base-conan",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -48,14 +44,13 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_C_COMPILER": "cl.exe",
-        "CMAKE_CXX_COMPILER": "cl.exe",
-        "VCPKG_TARGET_TRIPLET": "x64-windows"
+        "CMAKE_CXX_COMPILER": "cl.exe"
       }
     },
     {
       "name": "linux-gcc-debug",
       "displayName": "Linux x64 GCC Debug (ASan + UBSan)",
-      "inherits": "base-vcpkg",
+      "inherits": "base-conan",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -65,14 +60,13 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++",
-        "CAPYBARADB_ENABLE_SANITIZERS": "ON",
-        "VCPKG_TARGET_TRIPLET": "x64-linux"
+        "CAPYBARADB_ENABLE_SANITIZERS": "ON"
       }
     },
     {
       "name": "linux-gcc-release",
       "displayName": "Linux x64 GCC Release",
-      "inherits": "base-vcpkg",
+      "inherits": "base-conan",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -81,14 +75,13 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_C_COMPILER": "gcc",
-        "CMAKE_CXX_COMPILER": "g++",
-        "VCPKG_TARGET_TRIPLET": "x64-linux"
+        "CMAKE_CXX_COMPILER": "g++"
       }
     },
     {
       "name": "linux-clang-release",
       "displayName": "Linux x64 Clang Release",
-      "inherits": "base-vcpkg",
+      "inherits": "base-conan",
       "condition": {
         "type": "equals",
         "lhs": "${hostSystemName}",
@@ -97,8 +90,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++",
-        "VCPKG_TARGET_TRIPLET": "x64-linux"
+        "CMAKE_CXX_COMPILER": "clang++"
       }
     }
   ],

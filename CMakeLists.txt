@@ -15,13 +15,31 @@ include(cmake/FindODBCNative.cmake)
 include(cmake/DeployQt.cmake)
 
 find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets Svg Test)
-find_package(qt6advanceddocking CONFIG REQUIRED)
+find_package(qt6advanceddocking CONFIG QUIET)
+if(NOT TARGET ads::qt6advanceddocking)
+    include(FetchContent)
+    list(APPEND CMAKE_PREFIX_PATH "${Qt6_DIR}")
+    set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+    set(BUILD_STATIC OFF CACHE BOOL "" FORCE)
+    FetchContent_Declare(
+        qtadvanceddocking
+        GIT_REPOSITORY https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System.git
+        GIT_TAG 4.3.1
+        GIT_SHALLOW TRUE
+    )
+    FetchContent_MakeAvailable(qtadvanceddocking)
+    if(TARGET qt6advanceddocking AND NOT TARGET ads::qt6advanceddocking)
+        add_library(ads::qt6advanceddocking ALIAS qt6advanceddocking)
+    elseif(TARGET qtadvanceddocking-qt6 AND NOT TARGET ads::qt6advanceddocking)
+        add_library(ads::qt6advanceddocking ALIAS qtadvanceddocking-qt6)
+    endif()
+endif()
 find_package(PostgreSQL REQUIRED)
-find_package(Freetype REQUIRED)
+find_package(freetype CONFIG REQUIRED)
 find_package(harfbuzz CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(nanobench CONFIG REQUIRED)
-find_package(unofficial-sqlite3 CONFIG REQUIRED)
+find_package(SQLite3 REQUIRED)
 
 # ---------------------------------------------------------------------------
 # capybaradb_core — Pure C++23 core library (MUST NOT include any Qt headers)
@@ -120,7 +138,7 @@ add_library(capybaradb_driver_postgres SHARED
 )
 target_link_libraries(capybaradb_driver_postgres PRIVATE
     capybaradb_core
-    PostgreSQL::PostgreSQL
+    libpq::libpq
 )
 if(WIN32)
     target_link_libraries(capybaradb_driver_postgres PRIVATE ws2_32)
@@ -153,7 +171,7 @@ add_library(capybaradb_driver_sqlite SHARED
 )
 target_link_libraries(capybaradb_driver_sqlite PRIVATE
     capybaradb_core
-    unofficial::sqlite3::sqlite3
+    SQLite::SQLite3
 )
 capybaradb_set_compiler_warnings(capybaradb_driver_sqlite)
 capybaradb_enable_sanitizers_if_requested(capybaradb_driver_sqlite)
