@@ -227,7 +227,7 @@ void ResultSetWriter::append_utf8_capped(
     const bool may_json = (storage_.columns != nullptr && storage_.columns[col].may_hold_json);
     uint8_t flags = copy_len > 0
         ? copy_and_classify_utf8(staged_text_.data() + old_sz, data, static_cast<uint32_t>(copy_len), may_json, is_binary)
-        : (is_binary ? kCellBinary : kCellNone);
+        : static_cast<uint8_t>(is_binary ? kCellBinary : kCellNone);
     if (truncated) {
         flags |= kCellTruncated;
     }
