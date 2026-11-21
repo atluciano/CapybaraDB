@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <linearGradient id="expBgOpen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FCFCFC"/>
+      <stop offset="30%" stop-color="#FAFBFB"/>
+      <stop offset="60%" stop-color="#EDEDEC"/>
+      <stop offset="100%" stop-color="#E3E3E3"/>
+    </linearGradient>
+  </defs>
+  <rect x="3.5" y="3.5" width="9" height="9" rx="1" ry="1" fill="url(#expBgOpen)" stroke="#919191" stroke-width="1"/>
+  <rect x="5.5" y="7.5" width="5" height="1" fill="#4B63A7"/>
+</svg>

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=CapybaraDB
+GenericName=Universal Database Client
+Comment=High-performance native C++23 SQL Client
+Exec=capybaradb %F
+Icon=capybaradb
+Terminal=false
+Categories=Development;Database;
+Keywords=SQL;PostgreSQL;SQL Server;SQLite;Database;CapybaraDB;
+StartupNotify=true
+MimeType=application/sql;text/x-sql;

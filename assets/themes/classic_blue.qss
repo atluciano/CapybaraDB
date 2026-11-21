@@ -1,0 +1,645 @@
+/* CapybaraDB Native — Classic Blue Theme (docs/PARITY_SPEC.md) */
+
+QMainWindow#CapybaraMainWindow {
+    background-color: #A8C7D9;
+    color: #1E1E1E;
+}
+
+QMenuBar#MainMenuBar {
+    background-color: #A8C7D9;
+    color: #1E1E1E;
+    padding: 2px 4px;
+    border: none;
+}
+
+QMenuBar#MainMenuBar::item {
+    background-color: transparent;
+    color: #1E1E1E;
+    padding: 3px 8px;
+    border-radius: 2px;
+}
+
+QMenuBar#MainMenuBar::item:selected {
+    background-color: #D5E5EF;
+    color: #1E1E1E;
+}
+
+QMenuBar#MainMenuBar::item:pressed {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 1px solid #B5C5D2;
+}
+
+QMenu {
+    background-color: #F5F5F5;
+    color: #1E1E1E;
+    border: 1px solid #ABADB3;
+    padding: 2px;
+}
+
+QMenu::item {
+    padding: 4px 24px 4px 24px;
+    background-color: transparent;
+    color: #1E1E1E;
+}
+
+QMenu::item:selected {
+    background-color: #CCE4F7;
+    color: #1E1E1E;
+}
+
+QMenu::item:disabled {
+    color: #8A8A8A;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #D0D0D0;
+    margin: 3px 4px;
+}
+
+QToolBar#MainToolBarBand0,
+QToolBar#MainToolBarBand1 {
+    background-color: #D5E5EF;
+    color: #1E1E1E;
+    border: none;
+    spacing: 2px;
+    padding: 2px 4px;
+}
+
+QToolBar#MainToolBarBand0::separator,
+QToolBar#MainToolBarBand1::separator {
+    width: 1px;
+    background-color: #B5C5D2;
+    margin: 3px 4px;
+}
+
+QToolBar QToolButton {
+    background-color: transparent;
+    color: #1E1E1E;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+QToolBar QToolButton:hover:!disabled {
+    background-color: #E4EFF6;
+    border: 1px solid #B5C5D2;
+}
+
+QToolBar QToolButton:pressed,
+QToolBar QToolButton:checked {
+    background-color: #CCE4F7;
+    border: 1px solid #4E8EB8;
+}
+
+QToolBar QToolButton:disabled {
+    color: #717171;
+}
+
+QComboBox#AvailableDatabasesCombo {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 1px solid #ABADB3;
+    padding: 2px 6px;
+    min-height: 20px;
+}
+
+QComboBox#AvailableDatabasesCombo:disabled {
+    background-color: #E5E5E5;
+    color: #717171;
+    border: 1px solid #C2CCD4;
+}
+
+QStatusBar#GlobalStatusBar {
+    background-color: #425C6C;
+    color: #FFFFFF;
+    border: none;
+    min-height: 22px;
+}
+
+QStatusBar#GlobalStatusBar QLabel {
+    color: #FFFFFF;
+    background-color: transparent;
+    padding: 0px 6px;
+}
+
+QStatusBar#GlobalStatusBar::item {
+    border: none;
+}
+
+/* Docking Manager (ADS) */
+ads--CDockManager#DockManager {
+    background-color: #A8C7D9;
+    padding: 2px 5px 4px 5px;
+}
+
+ads--CDockContainerWidget {
+    background-color: #A8C7D9;
+}
+
+ads--CDockSplitter::handle {
+    background-color: #A8C7D9;
+}
+
+ads--CDockAreaWidget {
+    background-color: #F5FAFE;
+    border: 1px solid #B5C5D2;
+}
+
+ads--CDockAreaWidget[emptyWorkspace="true"],
+ads--CDockWidget#workspace_canvas,
+QWidget#WorkspaceCanvas {
+    background-color: #A8C7D9;
+    border: none;
+}
+
+ads--CDockAreaTitleBar {
+    background-color: #F5FAFE;
+    border-bottom: 1px solid #CCCEDB;
+    min-height: 24px;
+}
+
+ads--CDockAreaTitleBar > QLabel {
+    color: #1E1E1E;
+}
+
+ads--CDockAreaWidget#ExplorerDockArea ads--CDockWidgetTab,
+ads--CDockAreaWidget#ExplorerDockArea ads--CDockWidgetTab[activeTab="true"] {
+    background-color: #F5FAFE;
+    color: #1E1E1E;
+    border: none;
+}
+
+ads--CDockWidgetTab {
+    background-color: #A8C7D9;
+    color: #1E1E1E;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+}
+
+ads--CDockWidgetTab[activeTab="true"] {
+    background-color: #FFF49C;
+    color: #1E1E1E;
+    border: 1px solid #D5C777;
+    border-bottom: none;
+}
+
+ads--CDockWidgetTab[activeTab="false"]:hover {
+    background-color: #D5E5EF;
+    color: #1E1E1E;
+}
+
+ads--CDockWidgetTab QLabel {
+    color: #1E1E1E;
+}
+
+ads--CTitleBarButton {
+    color: #1E1E1E;
+    background-color: transparent;
+    border: none;
+}
+
+ads--CTitleBarButton:hover {
+    background-color: #D5E5EF;
+}
+
+/* Object Explorer Panel */
+QWidget#ObjectExplorerPanel {
+    background-color: #F5FAFE;
+    color: #1E1E1E;
+}
+
+QWidget#ExplorerToolbar {
+    background-color: #F5FAFE;
+    border-bottom: 1px solid #D5E5EF;
+}
+
+QToolButton#ExplorerToolButton,
+QToolButton#ExplorerToolbarOptionsButton {
+    background-color: transparent;
+    color: #1E1E1E;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 3px 4px;
+}
+
+QToolButton#ExplorerToolButton:hover:!disabled,
+QToolButton#ExplorerToolbarOptionsButton:hover:!disabled {
+    background-color: #D5E5EF;
+    border: 1px solid #B5C5D2;
+}
+
+QTreeView#ExplorerTree {
+    background-color: #F5FAFE;
+    color: #1E1E1E;
+    border: none;
+    padding: 5px;
+    show-decoration-selected: 0;
+}
+
+QTreeView#ExplorerTree::item {
+    height: 18px;
+    color: #1E1E1E;
+    padding: 0px 2px;
+}
+
+QTreeView#ExplorerTree::item:selected:active {
+    background-color: #0078D7;
+    color: #FFFFFF;
+}
+
+QTreeView#ExplorerTree::item:selected:!active {
+    background-color: #CCE4F7;
+    color: #1E1E1E;
+}
+
+QTreeView#ExplorerTree::branch:has-children:!has-siblings:closed,
+QTreeView#ExplorerTree::branch:closed:has-children:has-siblings {
+    image: url(:/icons/tree_expander_closed.svg);
+}
+
+QTreeView#ExplorerTree::branch:open:has-children:!has-siblings,
+QTreeView#ExplorerTree::branch:open:has-children:has-siblings {
+    image: url(:/icons/tree_expander_open.svg);
+}
+
+/* Query Tab & Splitters */
+QWidget#QueryTabWidget {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+}
+
+QWidget#QueryTabToolbar {
+    background-color: #D5E5EF;
+    color: #1E1E1E;
+    border-bottom: 1px solid #B5C5D2;
+}
+
+QWidget#QueryTabToolbar QLabel {
+    color: #1E1E1E;
+}
+
+QWidget#QueryTabToolbar QLineEdit {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 1px solid #ABADB3;
+    padding: 1px 4px;
+}
+
+QWidget#QueryTabToolbar QToolButton {
+    background-color: transparent;
+    color: #1E1E1E;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 2px 6px;
+}
+
+QWidget#QueryTabToolbar QToolButton:hover:!disabled {
+    background-color: #E4EFF6;
+    border: 1px solid #B5C5D2;
+}
+
+QWidget#QueryTabToolbar QToolButton:disabled {
+    color: #717171;
+}
+
+QSplitter#QueryVerticalSplitter::handle {
+    background-color: #D6E3ED;
+    height: 5px;
+}
+
+QPlainTextEdit#SqlEditorPlaceholder,
+QPlainTextEdit#SqlCodeEditor {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: none;
+}
+
+QFrame#GoToLineBar {
+    background-color: #D5E5EF;
+    border-bottom: 1px solid #B5C5D2;
+    color: #1E1E1E;
+}
+
+QFrame#FindReplaceBar {
+    background-color: #E4EFF6;
+    border-bottom: 1px solid #B5C5D2;
+    color: #1E1E1E;
+}
+
+QFrame#GoToLineBar QLabel,
+QFrame#FindReplaceBar QLabel,
+QFrame#FindReplaceBar QCheckBox {
+    background-color: transparent;
+    color: #1E1E1E;
+}
+
+QToolButton#CancelQueryButton,
+QToolButton#CancelExportButton {
+    background-color: transparent;
+    color: #222222;
+    border: 1px solid transparent;
+    padding: 1px 6px;
+}
+
+QToolButton#CancelQueryButton:hover:!disabled,
+QToolButton#CancelExportButton:hover:!disabled {
+    background-color: #E2E6EC;
+    border: 1px solid #CCCEDB;
+}
+
+/* OutputTabs Strip & Content */
+QWidget#OutputPanel {
+    background-color: #FFFFFF;
+}
+
+QWidget#OutputTabStripBar {
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCEDB;
+}
+
+QTabBar#OutputTabBar {
+    background-color: #EEEEEE;
+    border: none;
+}
+
+QTabBar#OutputTabBar::tab {
+    background-color: transparent;
+    color: #222222;
+    border: 1px solid transparent;
+    border-bottom: none;
+    padding: 3px 8px;
+    margin-right: 1px;
+    height: 18px;
+}
+
+QTabBar#OutputTabBar::tab:hover:!selected {
+    background-color: #E2E6EC;
+    border-color: #CCCEDB;
+}
+
+QTabBar#OutputTabBar::tab:selected {
+    background-color: #FFFFFF;
+    color: #222222;
+    border: 1px solid #CCCEDB;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+QToolButton#ExportCsvButton,
+QToolButton#ExportFlyoutButton {
+    background-color: transparent;
+    color: #222222;
+    border: 1px solid transparent;
+    padding: 1px 6px;
+}
+
+QToolButton#ExportCsvButton:hover:!disabled,
+QToolButton#ExportFlyoutButton:hover:!disabled {
+    background-color: #E2E6EC;
+    border: 1px solid #CCCEDB;
+}
+
+QFrame#ExportOptionsFlyout {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCEDB;
+    color: #1E1E1E;
+}
+
+QWidget#ResultsGridPlaceholder {
+    background-color: #F5F5F5;
+    border: 1px solid #ABADB3;
+}
+
+QTabBar#ResultSetsStrip {
+    background-color: #EEEEEE;
+    border-top: 1px solid #CCCEDB;
+}
+
+QTabBar#ResultSetsStrip::tab {
+    background-color: transparent;
+    color: #222222;
+    border: 1px solid transparent;
+    border-top: none;
+    padding: 2px 10px;
+    margin-right: 1px;
+    height: 18px;
+}
+
+QTabBar#ResultSetsStrip::tab:hover:!selected {
+    background-color: #E2E6EC;
+    border-color: #CCCEDB;
+}
+
+QTabBar#ResultSetsStrip::tab:selected {
+    background-color: #FFFFFF;
+    color: #222222;
+    border: 1px solid #CCCEDB;
+    border-top: 1px solid #FFFFFF;
+}
+
+QPlainTextEdit#MessagesView {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: none;
+    padding: 8px;
+}
+
+/* Query Status Bar (Yellow / Pink Error) */
+QWidget#QueryStatusBar {
+    background-color: #FFF49C;
+    border-top: 1px solid #D5C777;
+    color: #222222;
+}
+
+QWidget#QueryStatusBar[errorState="true"] {
+    background-color: #FDE7E9;
+    border-top: 1px solid #D5C777;
+    color: #222222;
+}
+
+QLabel#QueryStatusSegment {
+    background-color: transparent;
+    color: #222222;
+    border-left: 1px solid #D5C777;
+    padding: 2px 8px;
+}
+
+QLabel#QueryStatusMessage {
+    background-color: transparent;
+    color: #222222;
+}
+
+/* Modal Dialogs (ConnectionDialog, FilterSettingsDialog) */
+QDialog#ConnectionDialog,
+QWidget#ConnectionDialogBody,
+QWidget#ConnectionDetailPane,
+QFrame#ConnectionDialogFooter,
+QWidget#ConnectionDialogFooter,
+QDialog#FilterSettingsDialog {
+    background-color: #F5F5F5;
+    color: #1E1E1E;
+}
+
+QFrame#ConnectionDialogFooter {
+    border-top: 1px solid #D0D7DE;
+}
+
+QFrame#DialogBanner {
+    background-color: #E4EFF6;
+    border-bottom: 1px solid #B5C5D2;
+}
+
+QLabel#DialogBannerTitle {
+    color: #294A60;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+QLabel#DialogBannerSubtitle {
+    color: #1E1E1E;
+    background-color: transparent;
+}
+
+QLabel#DialogMutedText {
+    color: #4B5964;
+    background-color: transparent;
+}
+
+QLabel#DialogStatusLabel {
+    color: #A4262C;
+    background-color: transparent;
+}
+
+/* ConnectionDialog Master-Detail Sidebar & Engine Selector */
+QWidget#ProfileSidebarWidget {
+    background-color: #F5FAFE;
+    color: #1E1E1E;
+}
+
+QFrame#ConnectionSidebarDivider {
+    background-color: #B5C5D2;
+    border: none;
+}
+
+QTreeWidget#ProfileSidebarTree {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 1px solid #B5C5D2;
+    padding: 2px;
+    show-decoration-selected: 0;
+}
+
+QTreeWidget#ProfileSidebarTree::item {
+    height: 22px;
+    color: #1E1E1E;
+    padding: 0px 4px;
+}
+
+QTreeWidget#ProfileSidebarTree::item:hover:!selected {
+    background-color: #E4EFF6;
+}
+
+QTreeWidget#ProfileSidebarTree::item:selected:active {
+    background-color: #0078D7;
+    color: #FFFFFF;
+}
+
+QTreeWidget#ProfileSidebarTree::item:selected:!active {
+    background-color: #CCE4F7;
+    color: #1E1E1E;
+}
+
+QToolButton#EngineSelectorButton {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    border: 1px solid #B5C5D2;
+    border-radius: 3px;
+    padding: 3px 10px;
+}
+
+QToolButton#EngineSelectorButton:hover:!disabled:!checked {
+    background-color: #E4EFF6;
+    border: 1px solid #4E8EB8;
+}
+
+QToolButton#EngineSelectorButton:checked {
+    background-color: #CCE4F7;
+    color: #1E1E1E;
+    border: 1px solid #294A60;
+    font-weight: bold;
+}
+
+QToolButton#EngineSelectorButton:disabled {
+    background-color: #E5E5E5;
+    color: #717171;
+    border: 1px solid #C2CCD4;
+}
+
+QTabWidget#ConnectionInnerTabs::pane {
+    background-color: #FFFFFF;
+    border: 1px solid #B5C5D2;
+}
+
+QTabWidget#ConnectionInnerTabs > QTabBar::tab {
+    background-color: #E4EFF6;
+    color: #1E1E1E;
+    border: 1px solid #B5C5D2;
+    border-bottom: none;
+    padding: 4px 12px;
+    margin-right: 2px;
+}
+
+QTabWidget#ConnectionInnerTabs > QTabBar::tab:hover:!selected {
+    background-color: #D5E5EF;
+}
+
+QTabWidget#ConnectionInnerTabs > QTabBar::tab:selected {
+    background-color: #FFFFFF;
+    color: #294A60;
+    font-weight: bold;
+    border: 1px solid #B5C5D2;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+QWidget#FileConnectionPage {
+    background-color: #FFFFFF;
+    border: 1px solid #B5C5D2;
+}
+
+QTableWidget#FilterCriteriaTable {
+    background-color: #FFFFFF;
+    gridline-color: #E0E0E0;
+    color: #1E1E1E;
+}
+
+QFrame#FilterDescriptionBox {
+    background-color: #FFFFE1;
+    border: 1px solid #A0A0A0;
+    color: #1E1E1E;
+}
+
+/* Milestone 5 Panels, Popups & Dialogs */
+QWidget#RegisteredServersPanel {
+    background-color: #F5FAFE;
+    color: #1E1E1E;
+}
+
+QFrame#CompletionPopup {
+    background-color: #FFFFFF;
+    border: 1px solid #ABADB3;
+    color: #1E1E1E;
+}
+
+QDialog#QueryOptionsDialog,
+QDialog#OptionsDialog,
+QDialog#QueryHistoryDialog {
+    background-color: #F5F5F5;
+    color: #1E1E1E;
+}
+
+QWidget#ExecutionPlanWidget {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+}
