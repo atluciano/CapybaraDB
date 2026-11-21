@@ -62,8 +62,8 @@ ProfileSidebarWidget::ProfileSidebarWidget(QWidget* parent)
     : QWidget(parent) {
     setObjectName(QStringLiteral("ProfileSidebarWidget"));
     setAttribute(Qt::WA_StyledBackground, true);
-    setMinimumWidth(195);
-    setMaximumWidth(235);
+    setMinimumWidth(210);
+    setMaximumWidth(250);
 
     auto* root = new QVBoxLayout(this);
     root->setContentsMargins(10, 10, 10, 10);
@@ -109,7 +109,7 @@ ProfileSidebarWidget::ProfileSidebarWidget(QWidget* parent)
     delete_btn_->setAutoDefault(false);
     delete_btn_->setEnabled(false);
 
-    bottom_row->addWidget(duplicate_btn_, 1);
+    bottom_row->addWidget(duplicate_btn_);
     bottom_row->addWidget(delete_btn_, 1);
     root->addLayout(bottom_row);
 

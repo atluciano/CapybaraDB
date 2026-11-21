@@ -5,6 +5,7 @@
 #include <QFontDatabase>
 #include <QPalette>
 #include <QStringList>
+#include <QStyleFactory>
 
 static void init_capybaradb_theme_resources() {
     Q_INIT_RESOURCE(resources);
@@ -64,6 +65,9 @@ QString load_classic_blue_stylesheet() {
 }
 
 bool apply_classic_blue_theme(QApplication& app) {
+    if (QStyle* fusion = QStyleFactory::create(QStringLiteral("Fusion"))) {
+        app.setStyle(fusion);
+    }
     app.setFont(resolve_ui_font(kUiFontSizePx));
 
     QPalette pal = app.palette();
