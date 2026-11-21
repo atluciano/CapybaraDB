@@ -29,9 +29,9 @@ struct CellRange {
 };
 
 struct ClipboardCopyOptions {
-    std::span<const CellRange> ranges;
-    std::span<const uint32_t>  display_order;      // Column ordinals in display order (empty = 0..col_count-1)
-    std::span<const uint32_t>  row_order;          // View row -> physical row indirection (empty = identity)
+    std::span<const CellRange> ranges             = {};
+    std::span<const uint32_t>  display_order      = {}; // Column ordinals in display order (empty = 0..col_count-1)
+    std::span<const uint32_t>  row_order          = {}; // View row -> physical row indirection (empty = identity)
     bool                       include_headers    = false;
     bool                       retain_line_breaks = true;
 };

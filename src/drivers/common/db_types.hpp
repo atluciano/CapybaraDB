@@ -160,15 +160,15 @@ struct ExecOptions {
 };
 
 struct DbError {
-    std::string sql_state;
-    std::string severity;
-    std::string message;
-    std::string hint;
-    std::string schema;
-    std::string table;
-    std::string column;
-    std::string data_type;
-    std::string constraint;
+    std::string sql_state  = {};
+    std::string severity   = {};
+    std::string message    = {};
+    std::string hint       = {};
+    std::string schema     = {};
+    std::string table      = {};
+    std::string column     = {};
+    std::string data_type  = {};
+    std::string constraint = {};
     int32_t     position    = -1;
     int32_t     native_code = 0;
     bool        is_canceled = false;
